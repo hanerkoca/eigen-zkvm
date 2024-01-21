@@ -7,9 +7,10 @@ use powdr::riscv::continuations::{
 use powdr::riscv::{compile_rust, CoProcessors};
 use powdr::riscv_executor;
 use std::path::Path;
+use anyhow::Result;
 use std::time::Instant;
 
-pub fn zkvm_evm_prove_one(suite_json: String, output_path: &str) -> Result<(), String> {
+pub fn zkvm_evm_prove_one(suite_json: String, output_path: &str) -> Result<()> {
     log::debug!("Compiling Rust...");
     let force_overwrite = true;
     let with_bootloader = true;
